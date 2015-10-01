@@ -2,15 +2,43 @@
 <html>
 <head>
 	<title>Chess Blog | Online lessons</title>
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="{% static "css/blog.css" %}">
+  <link rel="stylesheet" href="{% static "css/mediaq.css" %}">
 	<link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
-	<div class="page-header">
-        <h1><a href="/">Chess Blog - Live</a></h1>
-    </div>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="heder-container container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#crud-menu" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="/"><img src="{% static "img/brand.png"%}"></a>
+        </div>
+
+        <div class="navbar-collapse collapse" id="crud-menu">
+          <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+                <li><a href="{% url "post_new" %}" class="menu-part"><span title="add new report" class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
+            </li>
+            <li>
+              <a href="#" class="menu-part"><span title="chess lessons" class="glyphicon glyphicon-blackboard"></span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <div class="content container">
     <div class="row">
         <div class="col-md-8">
@@ -19,5 +47,8 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript" src="{% static "js/jquery.js" %}"></script>
+<script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
 </body>
 </html>

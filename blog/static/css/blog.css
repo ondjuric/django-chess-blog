@@ -1,17 +1,39 @@
-.page-header {
-    background-color: #ff9400;
-    margin-top: 0;
-    padding: 20px 20px 20px 40px;
+body {
+    padding-top: 70px;
 }
 
-.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
-    font-size: 36pt;
-    text-decoration: none;
+.navbar-fixed-top {
+    width: 100%;
+    border-bottom: 2px solid #ff9400;
+    z-index: 100;
+    background: url('../img/header.jpg');
+}
+
+.brand {
+    margin-left: 0;
+    width: 20px;
+}
+
+.navbar-brand img {
+    height: 80px;
+    border: 2px solid #ff9400;
+    border-radius: 25px;
+    -webkit-box-shadow: -10px -9px 120px goldenrod;
+    -moz-box-shadow: -10px -9px 120px goldenrod;
+    box-shadow: -10px -9px 120px goldenrod;
+}
+
+.heder-container {
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 1%;
 }
 
 .content {
-    margin-left: 40px;
+    margin: 0 auto 40px;
+    max-width: 980px;
+    position: relative;
+    padding: 20px
 }
 
 h1, h2, h3, h4 {
@@ -27,15 +49,38 @@ h1, h2, h3, h4 {
     float: right;
 }
 
+.edit {
+    float: right;
+    margin-left: 10px;
+}
+
 .post-form textarea, .post-form input {
     width: 100%;
 }
 
-.top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
-    float: right;
-    font-size: 26pt;
+.menu-part {
+    color: #ff9400 !important;
+    text-align: right;
+    font-size: 25pt;
+    list-style: none;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     margin-right: 20px;
+    margin-top: 20px;
+    vertical-align: middle;
+}
+
+.menu-part:hover {
+  background: #555;
+  color: #fff;
+}
+
+.lesson, .lesson:hover, .lesson:visited {
+    color: blue;
+    float: right;
+    font-size: 20pt;
+    border-bottom-color: red;
 }
 
 .post {

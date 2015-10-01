@@ -1,0 +1,64 @@
+/* ----------- iPhone 4 and 4S ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .navbar-brand img {
+    height: 46px;
+    border: 1px solid #ff9400;
+    border-radius: 25px;
+  }
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    .navbar-brand img {
+      height: 46px;
+      border: 1px solid #ff9400;
+      border-radius: 25px;
+    }
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    .navbar-brand img {
+      height: 46px;
+      border: 1px solid #ff9400;
+      border-radius: 25px;
+    }
+}
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen
+  and (min-width: 420px)
+  and (max-width: 600px) {
+
+    .navbar-brand img {
+      height: 56px;
+      border: 1px solid #ff9400;
+      border-radius: 25px;
+    }
+
+}
+
+@media screen
+  and (min-width: 0px)
+  and (max-width: 419px) {
+
+    .navbar-brand img {
+      height: 46px;
+      border: 1px solid #ff9400;
+      border-radius: 25px;
+    }
+
+}
