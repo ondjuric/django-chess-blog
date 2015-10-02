@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 
-from .forms import PostForm
-from .models import Post
+from .forms import PostForm, LessonForm
+from .models import Post, Lesson
 
 
 # Create your views here.
@@ -44,3 +44,8 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+
+def lesson_list(request):
+    lessons = Lesson.objects.all()
+    return render(request, 'blog/lessons.html', {'lessons': lessons})

@@ -11,7 +11,7 @@
 </head>
 <body>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="heder-container container-fluid">
+      <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
 
@@ -32,20 +32,59 @@
             {% endif %}
             </li>
             <li>
-              <a href="#" class="menu-part"><span title="chess lessons" class="glyphicon glyphicon-blackboard"></span></a>
+              <a href="/lesson/" class="menu-part"><span title="chess lessons" class="glyphicon glyphicon-blackboard"></span></a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
-    <div class="content container">
-    <div class="row">
-        <div class="col-md-8">
-        	{% block content %}
-        	{% endblock %}
+    <div class="crsl container">
+      <div id="carousel-chess-blog" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-chess-blog" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-chess-blog" data-slide-to="1"></li>
+          <li data-target="#carousel-chess-blog" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="http://placehold.it/800x320" alt="...">
+            <div class="carousel-caption">
+                <h3>Chess blog</h3>
+            </div>
+          </div>
+          <div class="item">
+            <img src="http://placehold.it/800x320" alt="...">
+            <div class="carousel-caption">
+                <h3>Chess Lessons</h3>
+            </div>
+          </div>
+          <div class="item">
+            <img src="http://placehold.it/800x320" alt="...">
+            <div class="carousel-caption">
+                <h3>Chess tournaments</h3>
+            </div>
+          </div>
         </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-chess-blog" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-chess-blog" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
     </div>
+
+    <div class="blog container">
+      <div class="row">
+
+          	{% block content %}
+          	{% endblock %}
+
+      </div>
 </div>
 
 <script type="text/javascript" src="{% static "js/jquery.js" %}"></script>

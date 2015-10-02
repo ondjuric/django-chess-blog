@@ -1,14 +1,19 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-    <div class="post">
-        {% if post.published_date %}
-            <div class="date">
-                &nbsp;<a class="edit btn btn-default" href="{% url "post_edit" pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>&nbsp;
-                {{ post.published_date }}
-            </div>
-        {% endif %}
-        <h1>{{ post.title }}</h1>
-        <p>{{ post.text|linebreaks }}</p>
+    <div class="col-md-3">
+        <h1>Report about: {{ post.title }}</h1>
+    </div>
+    <div class="col-md-9">
+        <div class="post">
+            {% if post.published_date %}
+                <div class="date">
+                    &nbsp;<a class="edit btn btn-default" href="{% url "post_edit" pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>&nbsp;
+                    {{ post.published_date }}
+                </div>
+            {% endif %}
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.text|safe|linebreaks}}</p>
+        </div>
     </div>
 {% endblock %}

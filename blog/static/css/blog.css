@@ -6,7 +6,8 @@ body {
     width: 100%;
     border-bottom: 2px solid #ff9400;
     z-index: 100;
-    background: url('../img/header.jpg');
+    background: url('../img/bg.png');
+    background-color: #f7f7f7;
 }
 
 .brand {
@@ -18,22 +19,18 @@ body {
     height: 80px;
     border: 2px solid #ff9400;
     border-radius: 25px;
-    -webkit-box-shadow: -10px -9px 120px goldenrod;
-    -moz-box-shadow: -10px -9px 120px goldenrod;
-    box-shadow: -10px -9px 120px goldenrod;
 }
 
-.heder-container {
-    margin-right: 5%;
-    margin-left: 5%;
-    margin-bottom: 1%;
+/**add a bit of space between header and carousel margin-top*/
+.crsl {
+    margin-top: 20px;
 }
 
-.content {
-    margin: 0 auto 40px;
-    max-width: 980px;
+/**main blog content*/
+.blog {
+    max-width: 100%;
     position: relative;
-    padding: 20px
+    padding-top: 20px
 }
 
 h1, h2, h3, h4 {
@@ -89,4 +86,16 @@ h1, h2, h3, h4 {
 
 .post h1 a, .post h1 a:visited {
     color: #000000;
+}
+
+/* Makes images fully responsive in carousel*/
+
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  width: 100%;
+  height: 320px;
 }
