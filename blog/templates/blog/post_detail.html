@@ -8,11 +8,15 @@
         <div class="post">
             {% if post.published_date %}
                 <div class="date">
+                    {% if user.is_authenticated %}
                     &nbsp;<a class="edit btn btn-default" href="{% url "post_edit" pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>&nbsp;
+                    {% endif %}
                     {{ post.published_date }}
                 </div>
             {% endif %}
-            <h1>{{ post.title }}</h1>
+            {% if post.image_url %}
+            <img class="lazy" height="150" width="150" src=/static/img/{{ post.image_url }}>
+            {% endif %}
             <p>{{ post.text|safe|linebreaks}}</p>
         </div>
     </div>

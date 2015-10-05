@@ -49,13 +49,13 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
           <div class="item active">
-            <img src="http://placehold.it/800x320" alt="...">
+            <img src="{% static "img/chessold.jpg"%}" alt="chess">
             <div class="carousel-caption">
                 <h3>Chess blog</h3>
             </div>
           </div>
           <div class="item">
-            <img src="http://placehold.it/800x320" alt="...">
+            <img src="{% static "img/chessolder.jpg"%}" alt="chess">
             <div class="carousel-caption">
                 <h3>Chess Lessons</h3>
             </div>
@@ -88,6 +88,8 @@
 </div>
 
 <script type="text/javascript" src="{% static "js/jquery.js" %}"></script>
+<script type="text/javascript" src="{% static "js/jquery.lazyload.js" %}"></script>
 <script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
+<script type="text/javascript" src="{% static "js/custom.js" %}"></script>
 </body>
 </html>
