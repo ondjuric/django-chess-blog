@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="{% static "css/blog.css" %}">
   <link rel="stylesheet" href="{% static "css/mediaq.css" %}">
 	<link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="{% static "img/favicon.ico"%}" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
@@ -38,45 +39,49 @@
         </div>
       </div>
     </nav>
-    <div class="crsl container">
-      <div id="carousel-chess-blog" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#carousel-chess-blog" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-chess-blog" data-slide-to="1"></li>
-          <li data-target="#carousel-chess-blog" data-slide-to="2"></li>
-        </ol>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-          <div class="item active">
-            <img src="{% static "img/chessold.jpg"%}" alt="chess">
-            <div class="carousel-caption">
-                <h3>Chess blog</h3>
+    <div id="crsl-wrap">
+      <div class="crsl container">
+        <div id="carousel-chess-blog" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-chess-blog" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-chess-blog" data-slide-to="1"></li>
+            <li data-target="#carousel-chess-blog" data-slide-to="2"></li>
+          </ol>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="{% static "img/chessold.jpg"%}" alt="chess">
+              <div class="carousel-caption">
+                  <h3>Chess blog</h3>
+              </div>
+            </div>
+            <div class="item">
+              <img src="{% static "img/chessolder.jpg"%}" alt="chess">
+              <div class="carousel-caption">
+                  <h3>Chess Lessons</h3>
+              </div>
+            </div>
+            <div class="item">
+              <img src="{% static "img/move.jpg"%}" alt="chess">
+              <div class="carousel-caption">
+                  <h3>Chess tournaments</h3>
+              </div>
             </div>
           </div>
-          <div class="item">
-            <img src="{% static "img/chessolder.jpg"%}" alt="chess">
-            <div class="carousel-caption">
-                <h3>Chess Lessons</h3>
-            </div>
-          </div>
-          <div class="item">
-            <img src="http://placehold.it/800x320" alt="...">
-            <div class="carousel-caption">
-                <h3>Chess tournaments</h3>
-            </div>
-          </div>
-        </div>
 
-        <!-- Controls -->
-        <a class="left carousel-control" href="#carousel-chess-blog" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="right carousel-control" href="#carousel-chess-blog" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-chess-blog" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#carousel-chess-blog" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+        </div>
       </div>
     </div>
+
+    <div class="content_top"></div>
 
     <div class="blog container">
       <div class="row">
@@ -85,7 +90,30 @@
           	{% endblock %}
 
       </div>
-</div>
+    </div>
+
+    <section class="footer-top">
+      <section class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h2>About Us</h2>
+            <p>All about us!</p>
+          </div>
+          <div class="col-md-4">
+            <h2>Tags</h2>
+
+          </div>
+          <div class="col-md-4">
+            <h2>Contact</h2>
+            <span id="email">email: </span>
+            <span id="phone">phone: </span>
+          </div>
+        </div>
+      </section>
+    </section>
+    <footer id="footer">
+      <p>SweetBeeSrb, 2015&nbsp;|&nbsp;Chess-Blog</p>
+    </footer>
 
 <script type="text/javascript" src="{% static "js/jquery.js" %}"></script>
 <script type="text/javascript" src="{% static "js/jquery.lazyload.js" %}"></script>
