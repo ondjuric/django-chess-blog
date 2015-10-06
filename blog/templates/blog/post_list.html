@@ -13,7 +13,7 @@
                 <span>{{ post.published_date }}</span>
             </div>
             <div class="wrap-h1">
-                <h1><a href="{% url "post_detail" pk=post.pk %}">{{ post.title }}</a></h1>
+                <h2><a href='{% url "post_detail" pk=post.pk %}'>{{ post.title }}</a></h2>
             </div>
             <div class="wrap-text">
                 <p>{{ post.text|safe|truncatewords:15 }} </p>
