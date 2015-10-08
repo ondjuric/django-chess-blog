@@ -15,7 +15,7 @@
                 </div>&nbsp;
             {% endif %}
             {% if post.image_name %}
-            <img class="lazy" height="150" width="150" src=/static/img/{{post.image_name}} >
+            <img class="lazy" height="150" width="150" src={{ MEDIA_URL }}{{ post.image_name }} >
             {% endif %}
             <p>{{ post.text|safe|linebreaks}}</p>
         </div>
