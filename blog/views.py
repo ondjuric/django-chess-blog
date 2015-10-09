@@ -1,7 +1,10 @@
+from django.core.mail import send_mail, BadHeaderError
+from django.contrib import messages
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 
-from .forms import PostForm, LessonForm
+from .forms import PostForm, ContactForm
 from .models import Post, Lesson
 
 __author__ = 'SweetBee'
@@ -9,11 +12,17 @@ __author__ = 'SweetBee'
 
 # Create your views here.
 def post_list(request):
+    """
+    Lists all posts.
+    """
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 
 def post_detail(request, pk):
+    """
+    Shows detailed post
+    """
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
 
@@ -34,6 +43,9 @@ def post_new(request):
 
 
 def post_edit(request, pk):
+    """
+    Edits post
+    """
     post = get_object_or_404(Post, pk=pk)
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES, instance=post)
@@ -51,3 +63,31 @@ def post_edit(request, pk):
 def lesson_list(request):
     lessons = Lesson.objects.all()
     return render(request, 'blog/lessons.html', {'lessons': lessons})
+
+
+def contact(request):
+    """
+    Sends email through contact form
+    """
+    if request.method == 'GET':
+        form = ContactForm()
+    else:
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data['subject']
+            from_email = form.cleaned_data['from_email']
+            message = form.cleaned_data['message']
+            try:
+                send_mail(subject,
+                          message,
+                          from_email,
+                          ['to@mail.com'],
+                          fail_silently=False)
+
+                messages.success(request, 'Your message was sent.')
+            except BadHeaderError:
+                return HttpResponse('Invalid header found!')
+
+            return HttpResponseRedirect('')
+
+    return render(request, "blog/contact.html", {'form': form})
